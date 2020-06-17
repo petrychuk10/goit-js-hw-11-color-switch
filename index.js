@@ -16,7 +16,7 @@ stopButton.addEventListener("click", stopChangeBg);
 function startChangeBg() {
   timer = setInterval(() => {
     body.style.backgroundColor =
-      colors[randomIntegerFromInterval(0, colors.length)];
+      colors[randomIntegerFromInterval(colors.length)];
   }, 1000);
 }
 
@@ -24,6 +24,6 @@ function stopChangeBg() {
   clearInterval(timer);
 }
 
-const randomIntegerFromInterval = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+const randomIntegerFromInterval = (number) => {
+  return Math.floor(Math.random() * number);
 };
