@@ -18,10 +18,12 @@ function startChangeBg() {
     body.style.backgroundColor =
       colors[randomIntegerFromInterval(colors.length)];
   }, 1000);
+  startButton.removeEventListener("click", startChangeBg);
 }
 
 function stopChangeBg() {
   clearInterval(timer);
+  startButton.addEventListener("click", startChangeBg);
 }
 
 const randomIntegerFromInterval = (number) => {
